@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import VConsole from 'vconsole';
+
+if (process.env.NODE_ENV !== 'production') {
+    new VConsole();
+}
 
 ReactDOM.render(
   <React.StrictMode>
