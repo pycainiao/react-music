@@ -20,7 +20,6 @@ const addCustomize = () => config => {
                     'not ie < 9', // React doesn't support IE8 anyway
                 ],
             }),
-            require("autoprefixer")
         ]
     });
     return config;
