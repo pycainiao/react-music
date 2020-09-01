@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import StyleHeader from "./header.module.less";
-// import './header.module.less'
 
 function BaseHeader(props) {
   return (
