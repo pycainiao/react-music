@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route,Redirect} from 'react-router-dom'
+import Player from "./view/Player"; // 播放器
 import Layout from "./view/Layout";
 import Recommend from "./view/recommend/Recommend";
 import RankComponent from "./view/rank/RankComponent";
@@ -10,6 +11,7 @@ import SingerComponent from "./view/singers/SingerComponent";
 function App() {
   return (
       <BrowserRouter>
+        <Player/>
         <Switch>
           <Route exact path="/recommend/:id" component={AlbumComponent}/>
           <Route exact path="/singers/:id" component={SingerComponent}/>
