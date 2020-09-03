@@ -4,6 +4,9 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import VConsole from "vconsole";
+import fastclick from "fastclick";
+
+fastclick.attach(document.body);
 
 if (process.env.NODE_ENV !== "production") {
   new VConsole();
