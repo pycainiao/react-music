@@ -4,7 +4,6 @@ import BaseHeader from "../component/Header";
 function Layout(props) {
   return (
     <div>
-      layout
       <BaseHeader />
       <div className="container">{props.children}</div>
     </div>
