@@ -1,29 +1,36 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Player from "./view/Player"; // 播放器
 import Layout from "./view/Layout";
-import Recommend from "./view/recommend/Recommend";
-import RankComponent from "./view/rank/RankComponent";
-import Search from "./view/search/Search";
-import SingersComponent from "./view/singers/SingersComponent";
-import AlbumComponent from "./view/recommend/AlbumComponent";
-import SingerComponent from "./view/singers/SingerComponent";
+const Recommend = lazy(() => import("./view/recommend/Recommend"));
+const RankComponent = lazy(() => import("./view/rank/RankComponent"));
+const Search = lazy(() => import("./view/search/Search"));
+const SingersComponent = lazy(() => import("./view/singers/SingersComponent"));
+const AlbumComponent = lazy(() => import("./view/recommend/AlbumComponent"));
+const SingerComponent = lazy(() => import("./view/singers/SingerComponent"));
+
 function App() {
   return (
     <BrowserRouter>
       <Player />
-      <Switch>
-        <Route exact path="/recommend/:id" component={AlbumComponent} />
-        <Route exact path="/singers/:id" component={SingerComponent} />
-        <Route exact path="/rank/:id" component={AlbumComponent} />
-        <Route exact path="/search" component={Search} />
-        <Layout>
-          <Route exact path="/" render={() => <Redirect to={"/recommend"} />} />
-          <Route path="/recommend" component={Recommend} />
-          <Route path="/singers" component={SingersComponent} />
-          <Route path="/rank" component={RankComponent} />
-        </Layout>
-      </Switch>
+      <Suspense fallback={null}>
+        <Switch>
+          <Route exact path="/recommend/:id" component={AlbumComponent} />
+          <Route exact path="/singers/:id" component={SingerComponent} />
+          <Route exact path="/rank/:id" component={AlbumComponent} />
+          <Route exact path="/search" component={Search} />
+          <Layout>
+            <Route
+              exact
+              path="/"
+              render={() => <Redirect to={"/recommend"} />}
+            />
+            <Route path="/recommend" component={Recommend} />
+            <Route path="/singers" component={SingersComponent} />
+            <Route path="/rank" component={RankComponent} />
+          </Layout>
+        </Switch>
+      </Suspense>
     </BrowserRouter>
   );
 }
