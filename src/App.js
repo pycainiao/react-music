@@ -1,6 +1,6 @@
-import React, { lazy, Suspense } from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import { Provider } from "react-redux";
+import React, {lazy, Suspense} from "react";
+import {HashRouter, Redirect, Route, Switch} from "react-router-dom";
+import {Provider} from "react-redux";
 import store from "./store";
 import Player from "./view/Player"; // 播放器
 import Layout from "./view/Layout";
@@ -15,7 +15,7 @@ const SingerComponent = lazy(() => import("./view/singers/SingerComponent"));
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
         <Player />
         <Suspense fallback={null}>
           <Switch>
@@ -35,7 +35,7 @@ function App() {
             </Layout>
           </Switch>
         </Suspense>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   );
 }
