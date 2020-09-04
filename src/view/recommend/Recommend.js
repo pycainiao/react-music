@@ -11,7 +11,7 @@ function Recommend(props) {
   return (
     <div>
       这是Recommend
-      <button onClick={goToDetail}>跳转详情</button>
+      <button onClick={() => goToDetail}>跳转详情</button>
       <h2>{props.testData}</h2>
       <button onClick={props.addClick}>添加</button>
     </div>

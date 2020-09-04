@@ -1,6 +1,6 @@
-import React, {lazy, Suspense} from "react";
-import {HashRouter, Redirect, Route, Switch} from "react-router-dom";
-import {Provider} from "react-redux";
+import React, { lazy, Suspense } from "react";
+import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import { Provider } from "react-redux";
 import store from "./store";
 import Player from "./view/Player"; // 播放器
 import Layout from "./view/Layout";
