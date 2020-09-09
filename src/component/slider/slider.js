@@ -3,9 +3,13 @@
  * @author
  * @date 2020/9/9
  */
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import Swiper from "swiper";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper-bundle.min";
 import "swiper/swiper.less";
+// import "swiper/components/navigation/navigation.less";
+// import "swiper/components/pagination/pagination.less";
 import style from "./slider.module.less";
 
 function Slider(props) {
@@ -44,6 +48,7 @@ function Slider(props) {
           })}
           <div className="swiper-pagination"></div>
         </div>
+        {/*<div className="swiper-pagination"></div>*/}
       </div>
     </div>
   );
