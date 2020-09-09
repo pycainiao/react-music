@@ -2,9 +2,11 @@ import React, { lazy, Suspense } from "react";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
-import Player from "./view/Player"; // 播放器
-import Layout from "./view/Layout";
+// import Player from "./view/Player"; // 播放器
+// import Layout from "./view/Layout"; //
 
+const Player = lazy(() => import("./view/Player"));
+const Layout = lazy(() => import("./view/Layout"));
 const Recommend = lazy(() => import("./view/recommend/Recommend"));
 const RankComponent = lazy(() => import("./view/rank/RankComponent"));
 const Search = lazy(() => import("./view/search/Search"));
@@ -16,8 +18,8 @@ function App() {
   return (
     <Provider store={store}>
       <HashRouter>
-        <Player />
         <Suspense fallback={null}>
+          <Player />
           <Switch>
             <Route exact path="/recommend/:id" component={AlbumComponent} />
             <Route exact path="/singers/:id" component={SingerComponent} />
