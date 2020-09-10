@@ -1,15 +1,20 @@
 import * as actionTypes from "./constants";
 
-const defaultState = {
-  testData: 0,
+const recommendInit = {
+  bannerList: [], // 轮播图
+  recommendList: [], // 推荐列表
 };
 
-export default (state = defaultState, action) => {
+export default (state = recommendInit, action) => {
   switch (action.type) {
-    case actionTypes.ADD:
-      let addState = { ...state };
-      addState.testData += 1;
-      return addState;
+    case actionTypes.CHANGE_BANNER:
+      let bannerList = { ...state };
+      bannerList.bannerList = action.data || [];
+      return bannerList;
+    case actionTypes.CHANGE_RECOMMEND_LIST:
+      let recommendList = { ...state };
+      recommendList.recommendList = action.data || [];
+      return recommendList;
     default:
       return state;
   }

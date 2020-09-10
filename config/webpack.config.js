@@ -111,7 +111,8 @@ module.exports = function(webpackEnv) {
               propList: ['*','!letter-spacing','!font*'],
               selectorBlackList: ['.ignore'], // (Array) The selectors to ignore and leave as px.
               minPixelValue: 1, // (Number) Set the minimum pixel value to replace.
-              mediaQuery: false // (Boolean) Allow px to be converted in media queries.
+              mediaQuery: false, // (Boolean) Allow px to be converted in media queries.
+              exclude: [/node_modules/],
             }), // 添加的vw转化插件
             // Adds PostCSS Normalize as the reset css with default options,
             // so that it honors browserslist config in package.json

@@ -6,9 +6,13 @@ function BaseHeader() {
   return (
     <div className={style["container-header"]}>
       <div className={style["search"]}>
-        <div>&#xe65c;</div>
+        <div className={["iconfont menu", style["icon-size"]].join(" ")}>
+          &#xe65c;
+        </div>
         <div>XXX MUSIC</div>
-        <div>&#xe62b;</div>
+        <div className={["iconfont search", style["icon-size"]].join(" ")}>
+          &#xe62b;
+        </div>
       </div>
       <div className={style["header-link"]}>
         <Link className={style["link-item"]} to="/recommend">

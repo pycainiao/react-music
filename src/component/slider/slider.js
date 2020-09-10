@@ -27,7 +27,6 @@ function Slider(props) {
   }, [bannerList.length, sliderSwiper]);
   return (
     <div className={style["container"]}>
-      <div className={"ceshidiv"}>111</div>
       <div className={style["before"]}></div>
       <div
         className={["swiper-container", style["slider-container-nn"]].join(" ")}
