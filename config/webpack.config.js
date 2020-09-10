@@ -446,7 +446,7 @@ module.exports = function(webpackEnv) {
               exclude: cssModuleRegex,
               use: getStyleLoaders({
                 importLoaders: 1,
-                modules:true,
+                modules:false, // 单个css 不启用module.都整到less 里面吧
                 sourceMap: isEnvProduction && shouldUseSourceMap,
               }
               ),
