@@ -1,6 +1,6 @@
-import React, {useEffect, useRef, useState} from "react";
-import {getBannerList, getRecommendList} from "./store/actionCreators";
-import {connect} from "react-redux";
+import React, { useEffect, useRef, useState } from "react";
+import { getBannerList, getRecommendList } from "./store/actionCreators";
+import { connect } from "react-redux";
 import BScroll from "better-scroll";
 import Slider from "@/component/slider/slider";
 import RecommendList from "@/component/recommendlist/RecommendList";
