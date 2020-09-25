@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Son1 from "@/component/test/Son1";
 import Son2 from "@/component/test/Son2";
 

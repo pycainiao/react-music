@@ -9,31 +9,20 @@ function Recommend(props) {
   const { bannerList, recommendList } = props;
   const { getBannerListDispatch, getRecommendListDispatch } = props;
   useEffect(() => {
-    if (bannerList.length === 0) {
-      // 获取轮播图列表
-      getBannerListDispatch();
-    }
+    !bannerList.length && getBannerListDispatch(); // 获取轮播图列表
     !recommendList.length && getRecommendListDispatch(); // 推荐列表
-  }, [
-    bannerList.length,
-    getBannerListDispatch,
-    getRecommendListDispatch,
-    recommendList.length,
-  ]);
+    // eslint-disable-next-line
+  }, []);
   return (
-    <BaseScroll>
-      <div>
-        <Slider bannerList={bannerList} />
-        <RecommendList recommendList={recommendList} />
-      </div>
-    </BaseScroll>
-    // <div className={style["re-main"]} ref={reMain} id="wrapper">
-    //   {/*下面这个div是必须的,不然无法出现滚动,这是出现滚动的条件导致的*/}
-    //   <div>
-    //     <Slider bannerList={bannerList} />
-    //     <RecommendList recommendList={recommendList} />
-    //   </div>
-    // </div>
+    <div className={style["re-main"]}>
+      <BaseScroll>
+        {/*下面这个div是必须的,不然无法出现滚动,这是出现滚动的条件导致的*/}
+        <div>
+          <Slider bannerList={bannerList} />
+          <RecommendList recommendList={recommendList} />
+        </div>
+      </BaseScroll>
+    </div>
   );
 }
 
