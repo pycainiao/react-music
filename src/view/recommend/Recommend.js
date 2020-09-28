@@ -9,8 +9,8 @@ function Recommend(props) {
   const { bannerList, recommendList } = props;
   const { getBannerListDispatch, getRecommendListDispatch } = props;
   useEffect(() => {
-    !bannerList.length && getBannerListDispatch(); // 获取轮播图列表
-    !recommendList.length && getRecommendListDispatch(); // 推荐列表
+    getBannerListDispatch(); // 获取轮播图列表
+    getRecommendListDispatch(); // 推荐列表
     // eslint-disable-next-line
   }, []);
   return (
