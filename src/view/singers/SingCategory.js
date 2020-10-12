@@ -12,17 +12,19 @@ function SingCategory(props) {
   const { title, list } = props;
   console.log(list);
   return (
-    <BaseScroll direction={"horizental"}>
-      {/*下面这个div,必须为inline-block*/}
-      <div className={style["scroll-content"]}>
-        <div className={style["sing-category-container"]}>
-          <span>{title}</span>
-          {list.map((item) => {
-            return <span key={item.key}>{item.name}</span>;
-          })}
+    <div className={style["aaaa"]}>
+      <BaseScroll direction={"horizental"}>
+        {/*下面这个div,必须为inline-block*/}
+        <div className={style["scroll-content"]}>
+          <div className={style["sing-category-container"]}>
+            <span>{title}</span>
+            {list.map((item) => {
+              return <span key={item.key}>{item.name}</span>;
+            })}
+          </div>
         </div>
-      </div>
-    </BaseScroll>
+      </BaseScroll>
+    </div>
   );
 }
 

@@ -1,16 +1,19 @@
 import React from "react";
 import SingCategory from "@/view/singers/SingCategory";
+import style from "./style/base-main.module.less";
 
-import { categoryTypes } from "@/api/config";
+import { categoryTypes, alphaTypes } from "@/api/config";
 
 function SingersComponent(props) {
   return (
-    <div className={"container"}>
-      <header>
+    <div className={style["container"]}>
+      {/*头部*/}
+      <header className={style["singer-list-header"]}>
         <SingCategory title={"分类(默认热门):"} list={categoryTypes} />
-        这是头部
+        <SingCategory title={"首字母:"} list={alphaTypes} />
       </header>
-      <main>这是SingersComponent</main>
+      {/*列表*/}
+      <main className={"singers-list-main"}>这是歌手列表</main>
     </div>
   );
 }
