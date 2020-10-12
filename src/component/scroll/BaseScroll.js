@@ -17,7 +17,7 @@ function: 公共的滑动组件
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import BScroll from "better-scroll";
-import style from "./scroll.module.less";
+import "./scroll.module.less";
 
 const BaseScroll = (props) => {
   const { direction } = props;
@@ -41,7 +41,7 @@ const BaseScroll = (props) => {
     }
   });
   return (
-    <div className={style["base-scroll-main"]} ref={scrollDom}>
+    <div className={"base-scroll-main"} ref={scrollDom}>
       {props.children}
     </div>
   );

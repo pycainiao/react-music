@@ -2,7 +2,7 @@ import React from "react";
 import SingCategory from "@/view/singers/SingCategory";
 import style from "./style/base-main.module.less";
 
-import { categoryTypes, alphaTypes } from "@/api/config";
+import { alphaTypes, categoryTypes } from "@/api/config";
 
 function SingersComponent(props) {
   return (
@@ -13,7 +13,7 @@ function SingersComponent(props) {
         <SingCategory title={"首字母:"} list={alphaTypes} />
       </header>
       {/*列表*/}
-      <main className={"singers-list-main"}>这是歌手列表</main>
+      <main className={style["singers-list-main"]}>这是歌手列表</main>
     </div>
   );
 }

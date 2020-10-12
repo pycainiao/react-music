@@ -12,7 +12,7 @@ function SingCategory(props) {
   const { title, list } = props;
   console.log(list);
   return (
-    <div className={style["aaaa"]}>
+    <div className={style["sing-category-main"]}>
       <BaseScroll direction={"horizental"}>
         {/*下面这个div,必须为inline-block*/}
         <div className={style["scroll-content"]}>
