@@ -10,7 +10,6 @@ import style from "./style/sing-category.module.less";
 
 function SingCategory(props) {
   const { title, list } = props;
-  console.log(list);
   return (
     <div className={style["sing-category-main"]}>
       <BaseScroll direction={"horizental"}>
