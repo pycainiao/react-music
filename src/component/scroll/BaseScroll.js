@@ -15,11 +15,12 @@ function: 公共的滑动组件
 *
 * */
 
-import React, { useEffect, useRef, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import PropTypes from "prop-types";
 import BScroll from "better-scroll";
 import "./scroll.module.less";
 
+// 11
 const BaseScroll = (props) => {
   const { direction } = props;
   const scrollDom = useRef();
