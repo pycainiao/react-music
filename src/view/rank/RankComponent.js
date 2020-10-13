@@ -17,10 +17,10 @@ function RankComponent(props) {
   let globalList = rankList.slice(globalStartIndex);
   const renderSongList = (list) => {
     return list.length ? (
-      <div>
+      <div className={style["song-item-container"]}>
         {list.map((item, index) => {
           return (
-            <div key={index}>
+            <div key={index} className={style["song-item"]}>
               {index + 1}. {item.first} - {item.second}
             </div>
           );
