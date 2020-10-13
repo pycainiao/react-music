@@ -12,3 +12,8 @@ export const getRecommendListRequest = () => {
 export const getHotSingerListRequest = (count) => {
   return axiosInstance.get(`/top/artists?offset=${count}`);
 };
+
+// 排行榜
+export const getRankListRequest = () => {
+  return axiosInstance.get(`/toplist/detail`);
+};
