@@ -20,7 +20,6 @@ import PropTypes from "prop-types";
 import BScroll from "better-scroll";
 import "./scroll.module.less";
 
-//1111
 const BaseScroll = (props) => {
   const { direction } = props;
   const scrollDom = useRef();
