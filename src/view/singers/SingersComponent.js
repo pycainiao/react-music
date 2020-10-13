@@ -21,11 +21,15 @@ function SingersComponent(props) {
       <div>
         {singerList.map((item, index) => {
           return (
-            <div key={item.accountId + "" + index}>
-              <div className="img_wrapper">
+            <div
+              className={style["singer-container"]}
+              key={item.accountId + "" + index}
+            >
+              <div className={style["img_wrapper"]}>
                 <LazyLoad
                   placeholder={
                     <img
+                      className={style["singer-img"]}
                       width="100%"
                       height="100%"
                       src={require("./singer.png")}
@@ -34,6 +38,7 @@ function SingersComponent(props) {
                   }
                 >
                   <img
+                    className={style["singer-img"]}
                     src={`${item.picUrl}?param=300x300`}
                     width="100%"
                     height="100%"
@@ -41,7 +46,7 @@ function SingersComponent(props) {
                   />
                 </LazyLoad>
               </div>
-              <span className="name">{item.name}</span>
+              <span className={style["name"]}>{item.name}</span>
             </div>
           );
         })}

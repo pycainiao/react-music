@@ -16,3 +16,36 @@ function: 歌手页,主页的样式部分
   bottom: 60Px;
   width: 100%;
 }
+
+.singer-container {
+  position: relative;
+  display: flex;
+  padding: 2Px 0;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1PX;
+    transform: translateY(0.5);
+    transform-origin: 0 0;
+    background: #eee;
+  }
+  .img_wrapper {
+    .singer-img {
+      display: block;
+      width: 50Px;
+      height: 50Px;
+      border-radius: 4Px;
+    }
+  }
+  .name {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: rgb(46, 48, 48);
+    font-weight: 500;
+  }
+
+}
