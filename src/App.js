@@ -5,7 +5,7 @@ import store from "./store";
 // import Player from "./view/Player"; // 播放器
 // import Layout from "./view/Layout"; //
 
-const Player = lazy(() => import("./view/Player"));
+const Player = lazy(() => import("./view/play/Player"));
 const Layout = lazy(() => import("./view/Layout"));
 const Recommend = lazy(() => import("./view/recommend/Recommend"));
 const RankComponent = lazy(() => import("./view/rank/RankComponent"));
