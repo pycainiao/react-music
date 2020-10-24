@@ -51,4 +51,4 @@ function LoadingV2(props) {
   );
 }
 
-export default LoadingV2;
+export default React.memo(LoadingV2);

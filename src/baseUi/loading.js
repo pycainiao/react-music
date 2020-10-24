@@ -42,7 +42,7 @@ const LoadingMain = styled.div`
     animation-delay: -0.7s;
   }
 `;
-function Loading(props) {
+function Loading() {
   return (
     <LoadingWrapper>
       <LoadingMain>
@@ -53,4 +53,4 @@ function Loading(props) {
   );
 }
 
-export default Loading;
+export default React.memo(Loading);

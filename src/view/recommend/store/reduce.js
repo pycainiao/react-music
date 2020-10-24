@@ -3,6 +3,7 @@ import * as actionTypes from "./constants";
 const recommendInit = {
   bannerList: [], // 轮播图
   recommendList: [], // 推荐列表
+  enterLoading: true,
 };
 
 export default (state = recommendInit, action) => {
@@ -15,6 +16,10 @@ export default (state = recommendInit, action) => {
       let recommendList = { ...state };
       recommendList.recommendList = action.data || [];
       return recommendList;
+    case actionTypes.CHANGE_RECOMMEND_LOADING:
+      let loadingData = { ...state };
+      loadingData.enterLoading = action.data;
+      return loadingData;
     default:
       return state;
   }

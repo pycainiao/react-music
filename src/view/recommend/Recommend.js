@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import styled from "styled-components";
 import { getBannerList, getRecommendList } from "./store/actionCreators";
 import { setPlayList } from "@/view/play/store/actionCreators";
 import { connect } from "react-redux";
@@ -6,8 +7,20 @@ import Slider from "@/component/slider/slider";
 import RecommendList from "@/component/recommendlist/RecommendList";
 import style from "./style/recommend.module.less";
 import BaseScroll from "@/component/scroll/BaseScroll";
+import LoadingV2 from "@/baseUi/loadingV2";
+const LoadingV2Wrapper = styled.div`
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+`;
 function Recommend(props) {
-  const { bannerList, recommendList } = props;
+  const { bannerList, recommendList, enterLoading } = props;
+
   const {
     getBannerListDispatch,
     getRecommendListDispatch,
@@ -28,6 +41,11 @@ function Recommend(props) {
           <RecommendList recommendList={recommendList} />
         </div>
       </BaseScroll>
+      {enterLoading ? (
+        <LoadingV2Wrapper>
+          <LoadingV2></LoadingV2>
+        </LoadingV2Wrapper>
+      ) : null}
     </div>
   );
 }
@@ -36,6 +54,7 @@ const mapStateToProps = (state) => {
   return {
     bannerList: state.recommend.bannerList,
     recommendList: state.recommend.recommendList,
+    enterLoading: state.recommend.enterLoading,
   };
 };
 const mapDispatchToProps = (dispatch) => {

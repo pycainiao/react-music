@@ -16,6 +16,12 @@ export const checkRecommendList = (data) => {
     data,
   };
 };
+export const setRecommendLoading = (data) => {
+  return {
+    type: actionTypes.CHANGE_RECOMMEND_LOADING,
+    data,
+  };
+};
 export const getBannerList = () => {
   return (dispatch) => {
     getBannerRequest()
@@ -36,6 +42,7 @@ export const getRecommendList = () => {
         console.log(res, "列表部分");
         const action = checkRecommendList(res.result);
         dispatch(action);
+        dispatch(setRecommendLoading(false));
       })
       .catch((error) => {
         console.log("获取列表失败");
